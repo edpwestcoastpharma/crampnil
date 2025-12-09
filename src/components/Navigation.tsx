@@ -48,9 +48,6 @@ const Navigation = () => {
               alt="West-Coast Pharmaceutical Works Ltd."
               className="h-8 lg:h-10 w-auto object-contain"
             />
-            <span className="text-xl lg:text-2xl font-bold gradient-text">
-              CRAMPNIL
-            </span>
           </div>
 
           {/* Desktop Navigation */}
