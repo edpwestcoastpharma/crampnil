@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import crampnilSachet from "@/assets/crampnil-sachet.jpg";
 import crampnilTablet from "@/assets/crampnil-tablet.jpg";
 import crampnilCream from "@/assets/crampnil-cream.jpg";
@@ -12,175 +13,167 @@ const HeroSection = () => {
     }
   };
 
-  const smallProducts = [
-    { src: crampnilTablet, alt: "Crampnil Tablets", delay: "0.1s" },
-    { src: crampnilCream, alt: "Crampnil Cream", delay: "0.2s" },
-    { src: crampnilPowder, alt: "Crampnil Powder", delay: "0.3s" },
-    { src: crampnilD, alt: "Crampnil-D for Diabetics", delay: "0.4s" },
+  const benefits = [
+    "Relieves leg cramps & muscle spasms",
+    "Essential minerals & vitamins",
+    "Suitable for diabetic patients",
+    "Multiple dosage formats available",
+  ];
+
+  const productVariants = [
+    { src: crampnilTablet, alt: "Crampnil Tablets", name: "Tablets" },
+    { src: crampnilCream, alt: "Crampnil Cream", name: "Cream" },
+    { src: crampnilPowder, alt: "Crampnil Powder", name: "Powder" },
+    { src: crampnilD, alt: "Crampnil-D", name: "Diabetic" },
   ];
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-24 pb-16 lg:pt-0 lg:pb-0 overflow-hidden"
     >
-      {/* Animated Background Gradient */}
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-secondary-light" />
       
-      {/* Animated Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tl from-secondary/20 to-secondary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-full blur-3xl animate-rotate-slow" />
+      {/* Abstract Medical Shapes */}
+      <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-gradient-to-br from-primary/5 to-secondary/5 blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-gradient-to-tr from-secondary/5 to-primary/5 blur-3xl" />
       
-      {/* Decorative Floating Elements */}
-      <div className="absolute top-32 right-20 w-4 h-4 bg-primary/40 rounded-full animate-float" />
-      <div className="absolute top-48 left-32 w-3 h-3 bg-secondary/40 rounded-full animate-bounce-gentle" style={{ animationDelay: "0.5s" }} />
-      <div className="absolute bottom-40 left-20 w-5 h-5 bg-primary/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-      <div className="absolute bottom-32 right-40 w-3 h-3 bg-secondary/30 rounded-full animate-bounce-gentle" />
-      
-      {/* Mesh Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
-        backgroundSize: '40px 40px'
-      }} />
+      {/* Subtle Grid Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.015]" 
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--foreground)) 1px, transparent 0)`,
+          backgroundSize: '32px 32px'
+        }} 
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
           {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <span className="inline-block px-5 py-2.5 bg-gradient-to-r from-primary/15 to-secondary/15 text-primary rounded-full text-sm font-semibold mb-8 border border-primary/20 animate-slide-in-left shadow-soft backdrop-blur-sm">
-              ✨ Trusted by Healthcare Professionals
-            </span>
+          <div className="text-center lg:text-left order-2 lg:order-1">
+            {/* Trust Badge */}
+            <div 
+              className="inline-flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border shadow-soft mb-8 animate-fade-in"
+            >
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-sm font-medium text-muted-foreground">
+                Trusted by Healthcare Professionals
+              </span>
+            </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 leading-none animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <span className="gradient-text drop-shadow-sm">CRAMPNIL</span>
+            {/* Main Headline */}
+            <h1 
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 leading-[0.9] tracking-tight animate-fade-in"
+              style={{ animationDelay: "0.1s" }}
+            >
+              <span className="gradient-text">CRAMPNIL</span>
             </h1>
             
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-8 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-              Helps to Relieve 
-              <span className="relative mx-2">
-                <span className="relative z-10 text-primary font-bold">Muscle Pain</span>
-                <span className="absolute bottom-1 left-0 w-full h-2 bg-primary/20 -skew-x-6"></span>
-              </span>
-              & 
-              <span className="relative mx-2">
-                <span className="relative z-10 text-secondary font-bold">Cramps</span>
-                <span className="absolute bottom-1 left-0 w-full h-2 bg-secondary/20 skew-x-6"></span>
-              </span>
-            </h2>
-            
-            <p className="text-base lg:text-lg text-muted-foreground mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              Experience fast, effective relief from leg cramps, muscle spasms, and discomfort. 
-              Formulated with <span className="text-foreground font-medium">essential minerals and vitamins</span> for comprehensive muscle care.
+            {/* Sub-headline */}
+            <p 
+              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-8 animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Fast Relief from{" "}
+              <span className="text-primary">Muscle Pain</span> &{" "}
+              <span className="text-secondary">Cramps</span>
             </p>
             
-            <p className="text-sm text-muted-foreground/80 mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              Available in multiple formats – tablets, cream, powder, and diabetic-friendly options 
-              to suit your lifestyle and needs.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            {/* Benefits List */}
+            <ul className="space-y-3 mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              {benefits.map((benefit, index) => (
+                <li 
+                  key={index}
+                  className="flex items-center gap-3 text-muted-foreground justify-center lg:justify-start"
+                >
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <Check className="w-3 h-3 text-primary-foreground" strokeWidth={3} />
+                  </div>
+                  <span className="text-sm sm:text-base">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+            
+            {/* CTA Buttons */}
+            <div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               <button
                 onClick={() => handleScrollTo("#products")}
-                className="group relative px-10 py-5 gradient-bg text-primary-foreground font-bold rounded-2xl shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden"
+                className="group relative px-8 py-4 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                <span className="relative flex items-center justify-center gap-2">
-                  Explore Products
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-                </span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <span className="relative">Explore Products</span>
               </button>
               
               <button
                 onClick={() => handleScrollTo("#ingredients")}
-                className="group px-10 py-5 bg-background/80 backdrop-blur-sm border-2 border-secondary/30 text-secondary font-bold rounded-2xl hover:bg-secondary hover:text-secondary-foreground hover:border-secondary shadow-soft hover:shadow-glow-blue transition-all duration-300"
+                className="px-8 py-4 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300"
               >
-                <span className="flex items-center justify-center gap-2">
-                  Learn More
-                  <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">↓</span>
-                </span>
+                Know More
               </button>
-            </div>
-            
-            {/* Trust Indicators */}
-            <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span>Clinically Tested</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: "0.3s" }} />
-                <span>Fast Acting</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "0.6s" }} />
-                <span>Safe Formula</span>
-              </div>
             </div>
           </div>
 
-          {/* Right Content - Premium Product Collage */}
-          <div className="relative animate-slide-in-right">
-            {/* Main Container with Glass Effect */}
-            <div className="relative bg-gradient-to-br from-background/90 via-background/70 to-background/90 backdrop-blur-xl rounded-[2rem] p-8 lg:p-10 shadow-large border border-border/50">
-              
-              {/* Inner Glow */}
-              <div className="absolute inset-4 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-2xl pointer-events-none" />
-              
-              {/* Main Featured Product */}
-              <div className="relative mb-8 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-60" />
-                <div className="relative bg-gradient-to-br from-primary-light via-background to-secondary-light p-6 rounded-2xl shadow-medium border border-border/30 group-hover:shadow-glow-pink transition-all duration-500">
-                  <img
-                    src={crampnilSachet}
-                    alt="Crampnil Sachet - Instant Relief from Leg Cramps"
-                    className="w-full h-52 sm:h-64 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
+          {/* Right Content - Product Visuals */}
+          <div className="relative order-1 lg:order-2 animate-slide-in-right">
+            {/* Glow Effect Behind Main Product */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/20 rounded-full blur-3xl animate-pulse" />
+            
+            {/* Main Product Card */}
+            <div className="relative mb-6">
+              <div className="relative bg-background/90 backdrop-blur-sm rounded-3xl p-8 shadow-large border border-border/50 group hover:shadow-glow-pink transition-all duration-500">
+                {/* Inner Gradient Border */}
+                <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
+                
+                <img
+                  src={crampnilSachet}
+                  alt="Crampnil Sachet - Instant Relief from Leg Cramps"
+                  className="relative w-full h-56 sm:h-72 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500"
+                />
+                
                 {/* Product Label */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-background border border-border rounded-full shadow-soft text-xs font-semibold text-foreground/80">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full text-xs font-semibold shadow-medium">
                   Featured Product
                 </div>
               </div>
-              
-              {/* Product Grid */}
-              <div className="grid grid-cols-4 gap-3">
-                {smallProducts.map((product, index) => (
-                  <div 
-                    key={index}
-                    className="group relative animate-fade-in"
-                    style={{ animationDelay: product.delay }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative bg-background rounded-xl p-2.5 shadow-soft border border-border/30 group-hover:shadow-medium group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-                      <img
-                        src={product.src}
-                        alt={product.alt}
-                        className="w-full h-16 sm:h-20 object-contain"
-                      />
-                    </div>
+            </div>
+            
+            {/* Product Variants Grid */}
+            <div className="grid grid-cols-4 gap-3">
+              {productVariants.map((product, index) => (
+                <div 
+                  key={index}
+                  className="group cursor-pointer animate-fade-in"
+                  style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                >
+                  <div className="relative bg-background rounded-2xl p-3 shadow-soft border border-border/50 hover:shadow-medium hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
+                    <img
+                      src={product.src}
+                      alt={product.alt}
+                      className="w-full h-14 sm:h-16 object-contain"
+                    />
                   </div>
-                ))}
-              </div>
+                  <p className="text-[10px] sm:text-xs text-center text-muted-foreground mt-2 font-medium">
+                    {product.name}
+                  </p>
+                </div>
+              ))}
             </div>
             
-            {/* Floating Badges */}
-            <div className="absolute -top-5 -right-5 px-5 py-2.5 bg-gradient-to-r from-secondary to-secondary-glow text-secondary-foreground rounded-full shadow-glow-blue text-sm font-bold animate-float border-2 border-background">
-              5 Products
+            {/* Floating Badge */}
+            <div className="absolute -top-4 -right-4 px-4 py-2 bg-gradient-to-r from-secondary to-secondary-glow text-secondary-foreground rounded-full shadow-glow-blue text-xs font-bold animate-float border-2 border-background">
+              5 Variants
             </div>
-            
-            <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-gradient-to-r from-primary to-primary-glow text-primary-foreground rounded-full shadow-glow-pink text-xs font-bold animate-float border-2 border-background" style={{ animationDelay: "1.5s" }}>
-              ⚡ Fast Relief
-            </div>
-            
-            {/* Decorative Ring */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-dashed border-primary/20 rounded-[3rem] animate-rotate-slow" />
           </div>
         </div>
       </div>
       
-      {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };
