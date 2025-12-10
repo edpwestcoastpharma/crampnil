@@ -53,16 +53,6 @@ const HeroSection = () => {
           
           {/* Left Content */}
           <div className="text-center lg:text-left order-2 lg:order-1">
-            {/* Trust Badge */}
-            <div 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full border border-border shadow-soft mb-8 animate-fade-in"
-            >
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm font-medium text-muted-foreground">
-                Trusted by Healthcare Professionals
-              </span>
-            </div>
-            
             {/* Main Headline */}
             <h1 
               className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 leading-[0.9] tracking-tight animate-fade-in"
