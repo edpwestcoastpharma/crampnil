@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { useState, useEffect } from "react";
 import crampnilSachet from "@/assets/crampnil-sachet.jpg";
 import crampnilTablet from "@/assets/crampnil-tablet.jpg";
 import crampnilCream from "@/assets/crampnil-cream.jpg";
@@ -6,6 +7,23 @@ import crampnilPowder from "@/assets/crampnil-powder.jpg";
 import crampnilD from "@/assets/crampnil-d.jpg";
 
 const HeroSection = () => {
+  const allProducts = [
+    { src: crampnilSachet, alt: "Crampnil Sachet - Instant Relief", name: "Sachet" },
+    { src: crampnilTablet, alt: "Crampnil Tablets", name: "Tablets" },
+    { src: crampnilCream, alt: "Crampnil Cream", name: "Cream" },
+    { src: crampnilPowder, alt: "Crampnil Powder", name: "Powder" },
+    { src: crampnilD, alt: "Crampnil-D", name: "Diabetic" },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % allProducts.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [allProducts.length]);
+
   const handleScrollTo = (id: string) => {
     const element = document.querySelector(id);
     if (element) {
@@ -18,13 +36,6 @@ const HeroSection = () => {
     "Essential minerals & vitamins",
     "Suitable for diabetic patients",
     "Multiple dosage formats available",
-  ];
-
-  const productVariants = [
-    { src: crampnilTablet, alt: "Crampnil Tablets", name: "Tablets" },
-    { src: crampnilCream, alt: "Crampnil Cream", name: "Cream" },
-    { src: crampnilPowder, alt: "Crampnil Powder", name: "Powder" },
-    { src: crampnilD, alt: "Crampnil-D", name: "Diabetic" },
   ];
 
   return (
@@ -113,41 +124,60 @@ const HeroSection = () => {
             {/* Glow Effect Behind Main Product */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/20 rounded-full blur-3xl animate-pulse" />
             
-            {/* Main Product Card */}
+            {/* Main Product Card with Rotation */}
             <div className="relative mb-6">
-              <div className="relative bg-background/90 backdrop-blur-sm rounded-3xl p-8 shadow-large border border-border/50 group hover:shadow-glow-pink transition-all duration-500">
+              <div className="relative bg-background/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-border/50 group hover:shadow-glow-pink transition-all duration-500">
                 {/* Inner Gradient Border */}
                 <div className="absolute inset-[1px] rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
                 
-                <img
-                  src={crampnilSachet}
-                  alt="Crampnil Sachet - Instant Relief from Leg Cramps"
-                  className="relative w-full h-56 sm:h-72 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500"
-                />
+                {/* Rotating Product Images */}
+                <div className="relative h-56 sm:h-72">
+                  {allProducts.map((product, index) => (
+                    <img
+                      key={index}
+                      src={product.src}
+                      alt={product.alt}
+                      className={`absolute inset-0 w-full h-full object-contain mx-auto transition-all duration-700 ${
+                        index === activeIndex 
+                          ? "opacity-100 scale-100" 
+                          : "opacity-0 scale-95"
+                      }`}
+                    />
+                  ))}
+                </div>
                 
                 {/* Product Label */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full text-xs font-semibold shadow-medium">
-                  Featured Product
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-full text-xs font-semibold shadow-lg">
+                  {allProducts[activeIndex].name}
                 </div>
               </div>
             </div>
             
-            {/* Product Variants Grid */}
-            <div className="grid grid-cols-4 gap-3">
-              {productVariants.map((product, index) => (
+            {/* Product Variants Grid with Shadows */}
+            <div className="grid grid-cols-5 gap-3">
+              {allProducts.map((product, index) => (
                 <div 
                   key={index}
-                  className="group cursor-pointer animate-fade-in"
+                  className={`group cursor-pointer animate-fade-in transition-all duration-300 ${
+                    index === activeIndex ? "scale-105" : ""
+                  }`}
                   style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+                  onClick={() => setActiveIndex(index)}
                 >
-                  <div className="relative bg-background rounded-2xl p-3 shadow-soft border border-border/50 hover:shadow-medium hover:border-primary/20 hover:-translate-y-1 transition-all duration-300">
+                  <div className={`relative bg-background rounded-2xl p-2 shadow-lg border transition-all duration-300 ${
+                    index === activeIndex 
+                      ? "border-primary/50 shadow-glow-pink" 
+                      : "border-border/50 hover:shadow-xl hover:border-primary/20 hover:-translate-y-1"
+                  }`}>
                     <img
                       src={product.src}
                       alt={product.alt}
-                      className="w-full h-14 sm:h-16 object-contain"
+                      className="w-full h-12 sm:h-14 object-contain"
                     />
                   </div>
-                  <p className="text-[10px] sm:text-xs text-center text-muted-foreground mt-2 font-medium">
+                  <p className={`text-[10px] sm:text-xs text-center mt-2 font-medium transition-colors ${
+                    index === activeIndex ? "text-primary" : "text-muted-foreground"
+                  }`}>
                     {product.name}
                   </p>
                 </div>
