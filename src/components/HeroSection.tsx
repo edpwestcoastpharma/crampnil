@@ -60,13 +60,13 @@ const HeroSection = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           
-          {/* Left Content */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          {/* Left Content - Always First */}
+          <div className="text-center lg:text-left order-1">
             {/* Main Headline */}
             <h1 
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 leading-[0.9] tracking-tight animate-fade-in"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-4 sm:mb-6 leading-[0.9] tracking-tight animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               <span className="gradient-text">CRAMPNIL</span>
@@ -74,7 +74,7 @@ const HeroSection = () => {
             
             {/* Sub-headline */}
             <p 
-              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground mb-8 animate-fade-in"
+              className="text-lg sm:text-2xl lg:text-3xl font-semibold text-foreground mb-6 sm:mb-8 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               Fast Relief from{" "}
@@ -83,7 +83,7 @@ const HeroSection = () => {
             </p>
             
             {/* Benefits List */}
-            <ul className="space-y-3 mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               {benefits.map((benefit, index) => (
                 <li 
                   key={index}
@@ -99,12 +99,12 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div 
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in"
               style={{ animationDelay: "0.4s" }}
             >
               <button
                 onClick={() => handleScrollTo("#products")}
-                className="group relative px-8 py-4 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden"
+                className="group relative px-6 sm:px-8 py-3 sm:py-4 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore Products</span>
@@ -112,15 +112,15 @@ const HeroSection = () => {
               
               <button
                 onClick={() => handleScrollTo("#ingredients")}
-                className="px-8 py-4 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300"
               >
                 Know More
               </button>
             </div>
           </div>
 
-          {/* Right Content - Product Visuals */}
-          <div className="relative order-1 lg:order-2 animate-slide-in-right">
+          {/* Right Content - Product Visuals - Always Second */}
+          <div className="relative order-2 animate-slide-in-right">
             {/* Glow Effect Behind Main Product */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-primary/20 via-secondary/10 to-primary/20 rounded-full blur-3xl animate-pulse" />
             
