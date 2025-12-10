@@ -184,10 +184,6 @@ const HeroSection = () => {
               ))}
             </div>
             
-            {/* Floating Badge */}
-            <div className="absolute -top-4 -right-4 px-4 py-2 bg-gradient-to-r from-secondary to-secondary-glow text-secondary-foreground rounded-full shadow-glow-blue text-xs font-bold animate-float border-2 border-background">
-              5 Variants
-            </div>
           </div>
         </div>
       </div>
