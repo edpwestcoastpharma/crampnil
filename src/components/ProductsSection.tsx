@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import crampnilSachet from "@/assets/crampnil-sachet.jpg";
 import crampnilTablet from "@/assets/crampnil-tablet.jpg";
 import crampnilCream from "@/assets/crampnil-cream.jpg";
@@ -12,6 +13,7 @@ interface Product {
   image: string;
   benefits: string[];
   ingredientSection: string;
+  amazonLink: string;
 }
 
 const products: Product[] = [
@@ -27,6 +29,7 @@ const products: Product[] = [
       "Suitable for athletes and active individuals",
     ],
     ingredientSection: "sachet",
+    amazonLink: "https://www.amazon.in/Wescoast-Crampnil-Magnesium-Carnitine-promotes/dp/B0DDTT8WNT",
   },
   {
     id: "tablet",
@@ -40,6 +43,7 @@ const products: Product[] = [
       "Relaxes calf & leg cramps effectively",
     ],
     ingredientSection: "tablet",
+    amazonLink: "https://www.amazon.in/WEST-COAST-Crampnil-Tablets-relieve-muscle/dp/B0BW8K5NLF",
   },
   {
     id: "cream",
@@ -53,6 +57,7 @@ const products: Product[] = [
       "Easy to apply topical formula",
     ],
     ingredientSection: "cream",
+    amazonLink: "https://www.amazon.in/West-Coast-Crampnil-Relief-Cream/dp/B07JKXPMJ8",
   },
   {
     id: "powder",
@@ -66,6 +71,7 @@ const products: Product[] = [
       "Ideal for night cramps and muscle pain",
     ],
     ingredientSection: "powder",
+    amazonLink: "https://www.amazon.in/WEST-COAST-Crampnil-relieve-Magnesium-L-Carnitine/dp/B0BW8N964G",
   },
   {
     id: "crampnil-d",
@@ -79,6 +85,7 @@ const products: Product[] = [
       "Effective relief from diabetic leg cramps",
     ],
     ingredientSection: "diabetic",
+    amazonLink: "https://www.amazon.in/WEST-COAST-Crampnil-D-Diabetic-Leg-Cramps/dp/B0BWF84Z4G",
   },
 ];
 
@@ -94,7 +101,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div
-      className="flip-card h-[420px] cursor-pointer"
+      className="flip-card h-[480px] cursor-pointer"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={() => setIsFlipped(!isFlipped)}
@@ -103,18 +110,31 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* Front of Card */}
         <div className="flip-card-front bg-background rounded-2xl shadow-medium overflow-hidden">
           <div className="h-full flex flex-col">
-            <div className="flex-1 bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-6 flex items-center justify-center">
+            <Link 
+              to={`/product/${product.id}`}
+              onClick={(e) => e.stopPropagation()}
+              className="flex-1 bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-6 flex items-center justify-center hover:opacity-90 transition-opacity"
+            >
               <img
                 src={product.image}
                 alt={product.name}
                 className="max-h-48 w-auto object-contain drop-shadow-lg"
               />
-            </div>
+            </Link>
             <div className="p-5 text-center bg-background">
               <h3 className="text-lg font-bold text-foreground mb-2">
                 {product.name}
               </h3>
-              <p className="text-sm text-muted-foreground">{product.tagline}</p>
+              <p className="text-sm text-muted-foreground mb-3">{product.tagline}</p>
+              <a
+                href={product.amazonLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-block w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+              >
+                Buy Now
+              </a>
             </div>
           </div>
         </div>
@@ -133,15 +153,26 @@ const ProductCard = ({ product }: { product: Product }) => {
                 </li>
               ))}
             </ul>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleViewIngredients();
-              }}
-              className="mt-4 w-full py-3 bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-xl font-medium transition-colors text-sm"
-            >
-              View Ingredients →
-            </button>
+            <div className="mt-4 space-y-2">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleViewIngredients();
+                }}
+                className="w-full py-3 bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-xl font-medium transition-colors text-sm"
+              >
+                View Ingredients →
+              </button>
+              <a
+                href={product.amazonLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="block w-full py-3 bg-primary-foreground text-primary rounded-xl font-medium text-sm text-center hover:opacity-90 transition-opacity"
+              >
+                Buy Now
+              </a>
+            </div>
           </div>
         </div>
       </div>
