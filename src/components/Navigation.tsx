@@ -6,7 +6,6 @@ const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About Us", href: "#about" },
   { label: "Products", href: "#products" },
-  { label: "Ingredients & Info", href: "#ingredients" },
   { label: "West-Coast", href: "#westcoast" },
   { label: "Contact Us", href: "#contact" },
 ];
