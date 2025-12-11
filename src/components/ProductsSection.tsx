@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import crampnilSachet from "@/assets/crampnil-sachet.jpg";
 import crampnilTablet from "@/assets/crampnil-tablet.jpg";
@@ -90,90 +89,38 @@ const products: Product[] = [
 ];
 
 const ProductCard = ({ product }: { product: Product }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleViewIngredients = () => {
-    const element = document.querySelector(`#ingredient-${product.ingredientSection}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div
-      className="flip-card h-[480px] cursor-pointer"
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
-      <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
-        {/* Front of Card */}
-        <div className="flip-card-front bg-background rounded-2xl shadow-medium overflow-hidden">
-          <div className="h-full flex flex-col">
-            <Link 
-              to={`/product/${product.id}`}
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-6 flex items-center justify-center hover:opacity-90 transition-opacity"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="max-h-48 w-auto object-contain drop-shadow-lg"
-              />
-            </Link>
-            <div className="p-5 text-center bg-background">
-              <h3 className="text-lg font-bold text-foreground mb-2">
-                {product.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">{product.tagline}</p>
-              <a
-                href={product.amazonLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-block w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
-              >
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Back of Card */}
-        <div className="flip-card-back bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-large p-6">
-          <div className="h-full flex flex-col text-primary-foreground">
-            <h3 className="text-xl font-bold mb-4 text-center">{product.name}</h3>
-            <ul className="flex-1 space-y-3">
-              {product.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm">
-                  <span className="w-5 h-5 rounded-full bg-primary-foreground/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    ✓
-                  </span>
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 space-y-2">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleViewIngredients();
-                }}
-                className="w-full py-3 bg-primary-foreground/20 hover:bg-primary-foreground/30 rounded-xl font-medium transition-colors text-sm"
-              >
-                View Ingredients →
-              </button>
-              <a
-                href={product.amazonLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="block w-full py-3 bg-primary-foreground text-primary rounded-xl font-medium text-sm text-center hover:opacity-90 transition-opacity"
-              >
-                Buy Now
-              </a>
-            </div>
-          </div>
+    <div className="bg-background rounded-2xl shadow-medium overflow-hidden">
+      <Link 
+        to={`/product/${product.id}`}
+        className="block bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-6 flex items-center justify-center hover:opacity-95 transition-opacity"
+      >
+        <img
+          src={product.image}
+          alt={product.name}
+          className="max-h-48 w-auto object-contain drop-shadow-lg"
+        />
+      </Link>
+      <div className="p-5 text-center bg-background">
+        <h3 className="text-lg font-bold text-foreground mb-1">
+          {product.name}
+        </h3>
+        <p className="text-sm text-muted-foreground mb-4">{product.tagline}</p>
+        <div className="space-y-2">
+          <Link
+            to={`/product/${product.id}`}
+            className="inline-block w-full py-2.5 bg-primary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            View Details
+          </Link>
+          <a
+            href={product.amazonLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            Buy Now
+          </a>
         </div>
       </div>
     </div>
@@ -208,7 +155,7 @@ const ProductsSection = () => {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-12">
-          Hover or tap on product cards to see benefits and ingredient details
+          Click on any product card to view detailed information
         </p>
       </div>
     </section>
