@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import westcoastLogo from "@/assets/westcoast-logo.png";
+import crampnilLogo from "@/assets/crampnil-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -44,8 +44,8 @@ const Navigation = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-3">
             <img
-              src={westcoastLogo}
-              alt="West-Coast Pharmaceutical Works Ltd."
+              src={crampnilLogo}
+              alt="CRAMPNIL"
               className="h-8 lg:h-10 w-auto object-contain"
             />
           </div>
