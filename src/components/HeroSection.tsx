@@ -62,8 +62,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           
-          {/* Left Content - Always First */}
-          <div className="text-center lg:text-left order-1">
+          {/* Content - Centered */}
+          <div className="text-center order-1 max-w-2xl mx-auto">
             {/* Main Headline */}
             <h1 
               className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-4 sm:mb-6 leading-[0.9] tracking-tight animate-fade-in"
@@ -87,7 +87,7 @@ const HeroSection = () => {
               {benefits.map((benefit, index) => (
                 <li 
                   key={index}
-                  className="flex items-center gap-3 text-muted-foreground justify-center lg:justify-start"
+                  className="flex items-center gap-3 text-muted-foreground justify-center"
                 >
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <Check className="w-3 h-3 text-primary-foreground" strokeWidth={3} />
@@ -99,7 +99,7 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div 
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-in"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in"
               style={{ animationDelay: "0.4s" }}
             >
               <button
