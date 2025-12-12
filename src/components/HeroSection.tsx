@@ -60,7 +60,7 @@ const HeroSection = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div className="flex justify-center items-center">
           
           {/* Content - Centered */}
           <div className="text-center order-1 max-w-2xl mx-auto">
