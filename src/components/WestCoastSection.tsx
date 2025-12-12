@@ -61,7 +61,7 @@ const WestCoastSection = () => {
           </div>
 
           {/* Right Content */}
-          <div className="flex flex-col items-center lg:items-end gap-8">
+          <div className="flex flex-col items-center gap-8">
             {/* Logo */}
             <div className="bg-primary-foreground rounded-2xl p-8 shadow-large">
               <img
