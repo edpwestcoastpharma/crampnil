@@ -4,7 +4,6 @@ import crampnilLogo from "@/assets/crampnil-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
-  { label: "About Us", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "West-Coast", href: "#westcoast" },
   { label: "Contact Us", href: "#contact" },
