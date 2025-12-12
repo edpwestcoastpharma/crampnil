@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
 import crampnilSachet from "@/assets/crampnil-sachet.jpg";
 import crampnilTablet from "@/assets/crampnil-tablet.jpg";
 import crampnilCream from "@/assets/crampnil-cream.jpg";
@@ -117,8 +118,9 @@ const ProductCard = ({ product }: { product: Product }) => {
             href={product.amazonLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
           >
+            <ShoppingCart className="w-4 h-4" />
             Buy Now
           </a>
         </div>
