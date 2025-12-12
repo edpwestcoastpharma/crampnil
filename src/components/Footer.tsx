@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-6">
             <a
-              href="https://facebook.com/westcoastpharma"
+              href="https://www.facebook.com/Westcoastpharma/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-background/70 hover:text-background transition-colors text-sm font-medium"
@@ -29,7 +29,7 @@ const Footer = () => {
               Facebook
             </a>
             <a
-              href="https://instagram.com/westcoastpharma"
+              href="https://www.instagram.com/westcoastpharma/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="text-background/70 hover:text-background transition-colors text-sm font-medium"
@@ -37,7 +37,7 @@ const Footer = () => {
               Instagram
             </a>
             <a
-              href="https://linkedin.com/company/westcoast-pharmaceutical"
+              href="https://www.linkedin.com/company/west-coast-pharmaceuticals-works-limited/?originalSubdomain=in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-background/70 hover:text-background transition-colors text-sm font-medium"
