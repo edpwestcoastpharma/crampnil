@@ -111,7 +111,7 @@ const HeroSection = () => {
               </button>
               
               <button
-                onClick={() => handleScrollTo("#ingredients")}
+                onClick={() => handleScrollTo("#westcoast")}
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300"
               >
                 Know More
