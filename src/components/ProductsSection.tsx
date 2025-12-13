@@ -91,26 +91,26 @@ const products: Product[] = [
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className="bg-background rounded-2xl shadow-medium overflow-hidden">
+    <div className="bg-background rounded-xl shadow-medium overflow-hidden">
       <Link 
         to={`/product/${product.id}`}
-        className="block bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-6 flex items-center justify-center hover:opacity-95 transition-opacity"
+        className="block bg-gradient-to-br from-primary-light/50 to-secondary-light/50 p-4 flex items-center justify-center hover:opacity-95 transition-opacity"
       >
         <img
           src={product.image}
           alt={product.name}
-          className="max-h-48 w-auto object-contain drop-shadow-lg"
+          className="max-h-36 w-auto object-contain drop-shadow-lg"
         />
       </Link>
-      <div className="p-5 text-center bg-background">
-        <h3 className="text-lg font-bold text-foreground mb-1">
+      <div className="p-3 text-center bg-background">
+        <h3 className="text-sm font-bold text-foreground mb-0.5">
           {product.name}
         </h3>
-        <p className="text-sm text-muted-foreground mb-4">{product.tagline}</p>
-        <div className="space-y-2">
+        <p className="text-xs text-muted-foreground mb-2">{product.tagline}</p>
+        <div className="space-y-1.5">
           <Link
             to={`/product/${product.id}`}
-            className="inline-block w-full py-2.5 bg-primary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+            className="inline-block w-full py-2 bg-primary text-primary-foreground rounded-lg font-medium text-xs hover:opacity-90 transition-opacity"
           >
             View Details
           </Link>
@@ -118,9 +118,9 @@ const ProductCard = ({ product }: { product: Product }) => {
             href={product.amazonLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl font-medium text-sm hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-1.5 w-full py-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg font-medium text-xs hover:opacity-90 transition-opacity"
           >
-            <ShoppingCart className="w-4 h-4" />
+            <ShoppingCart className="w-3.5 h-3.5" />
             Buy Now
           </a>
         </div>
@@ -131,32 +131,32 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="py-20 lg:py-28 bg-background relative overflow-hidden">
+    <section id="products" className="py-10 lg:py-14 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="inline-block px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium mb-2">
             Product Range
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
             Our <span className="gradient-text">Crampnil Range</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-sm">
             Discover our complete range of muscle care products, each formulated to 
             provide targeted relief for different needs and preferences.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-12">
+        <p className="text-center text-xs text-muted-foreground mt-6">
           Click on any product card to view detailed information
         </p>
       </div>

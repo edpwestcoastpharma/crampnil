@@ -42,7 +42,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-24 pb-16 lg:pt-0 lg:pb-0 overflow-hidden"
+      className="relative min-h-[70vh] flex items-center pt-20 pb-8 lg:pt-16 lg:pb-8 overflow-hidden"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-secondary-light" />
@@ -67,7 +67,7 @@ const HeroSection = () => {
           <div className="text-center order-1 max-w-2xl mx-auto">
             {/* Main Headline */}
             <div 
-              className="mb-4 sm:mb-6 animate-fade-in"
+              className="mb-2 sm:mb-3 animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               <img 
@@ -79,7 +79,7 @@ const HeroSection = () => {
             
             {/* Sub-headline */}
             <p 
-              className="text-lg sm:text-2xl lg:text-3xl font-semibold text-foreground mb-6 sm:mb-8 animate-fade-in"
+              className="text-lg sm:text-xl lg:text-2xl font-semibold text-foreground mb-4 sm:mb-5 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               Fast Relief from{" "}
@@ -88,7 +88,7 @@ const HeroSection = () => {
             </p>
             
             {/* Benefits List */}
-            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-10 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               {benefits.map((benefit, index) => (
                 <li 
                   key={index}
@@ -104,12 +104,12 @@ const HeroSection = () => {
             
             {/* CTA Buttons */}
             <div 
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center animate-fade-in"
               style={{ animationDelay: "0.4s" }}
             >
               <button
                 onClick={() => handleScrollTo("#products")}
-                className="group relative px-6 sm:px-8 py-3 sm:py-4 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden"
+                className="group relative px-5 sm:px-6 py-2.5 sm:py-3 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden text-sm"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore Products</span>
@@ -117,7 +117,7 @@ const HeroSection = () => {
               
               <button
                 onClick={() => handleScrollTo("#westcoast")}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300"
+                className="px-5 sm:px-6 py-2.5 sm:py-3 bg-background border-2 border-secondary/30 text-secondary font-semibold rounded-full shadow-soft hover:bg-secondary hover:text-secondary-foreground hover:border-secondary hover:shadow-glow-blue transition-all duration-300 text-sm"
               >
                 Know More
               </button>
@@ -128,7 +128,7 @@ const HeroSection = () => {
       </div>
       
       {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
 };
