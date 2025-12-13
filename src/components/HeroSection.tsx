@@ -5,6 +5,7 @@ import crampnilTablet from "@/assets/crampnil-tablet.jpg";
 import crampnilCream from "@/assets/crampnil-cream.jpg";
 import crampnilPowder from "@/assets/crampnil-powder.jpg";
 import crampnilD from "@/assets/crampnil-d.jpg";
+import crampnilHeroLogo from "@/assets/crampnil-hero-logo.png";
 
 const HeroSection = () => {
   const allProducts = [
@@ -65,12 +66,16 @@ const HeroSection = () => {
           {/* Content - Centered */}
           <div className="text-center order-1 max-w-2xl mx-auto">
             {/* Main Headline */}
-            <h1 
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-4 sm:mb-6 leading-[0.9] tracking-tight animate-fade-in"
+            <div 
+              className="mb-4 sm:mb-6 animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
-              <span className="gradient-text">CRAMPNIL</span>
-            </h1>
+              <img 
+                src={crampnilHeroLogo} 
+                alt="CRAMPNIL" 
+                className="h-16 sm:h-20 lg:h-28 xl:h-32 w-auto mx-auto"
+              />
+            </div>
             
             {/* Sub-headline */}
             <p 
