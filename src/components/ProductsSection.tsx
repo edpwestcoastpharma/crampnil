@@ -131,7 +131,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="py-10 lg:py-14 bg-background relative overflow-hidden">
+    <section id="products" className="pt-4 pb-10 lg:pt-6 lg:pb-14 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
