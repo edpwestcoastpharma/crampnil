@@ -172,25 +172,25 @@ const ProductDetail = () => {
             </div>
 
             {/* Right: Product Information */}
-            <div className="space-y-1.5">
-              <h1 className="text-3xl lg:text-4xl font-bold text-foreground">
+            <div className="space-y-1">
+              <h1 className="text-3xl lg:text-4xl font-bold text-foreground mb-1">
                 {product.name}
               </h1>
 
               {/* Dosage Form */}
-              <div className="bg-muted/50 rounded-xl p-3">
-                <h3 className="font-semibold text-foreground mb-0.5">Dosage Form</h3>
-                <p className="text-muted-foreground">{product.dosageForm}</p>
+              <div className="bg-muted/50 rounded-lg p-2.5">
+                <h3 className="font-semibold text-foreground text-sm">Dosage Form</h3>
+                <p className="text-muted-foreground text-sm">{product.dosageForm}</p>
               </div>
 
               {/* Composition */}
               {product.composition && (
-                <div className="bg-muted/50 rounded-xl p-3">
-                  <h3 className="font-semibold text-foreground mb-1">Composition</h3>
-                  <ul className="space-y-0.5">
+                <div className="bg-muted/50 rounded-lg p-2.5">
+                  <h3 className="font-semibold text-foreground text-sm mb-0.5">Composition</h3>
+                  <ul className="space-y-0">
                     {product.composition.map((item, index) => (
-                      <li key={index} className="text-muted-foreground flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <li key={index} className="text-muted-foreground text-sm flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-primary" />
                         {item}
                       </li>
                     ))}
@@ -200,11 +200,11 @@ const ProductDetail = () => {
 
               {/* Nutritional Information */}
               {product.nutritionalInfo && (
-                <div className="bg-muted/50 rounded-xl p-3">
-                  <h3 className="font-semibold text-foreground mb-1">Nutritional Information (per 15 g serving)</h3>
-                  <div className="grid grid-cols-2 gap-1">
+                <div className="bg-muted/50 rounded-lg p-2.5">
+                  <h3 className="font-semibold text-foreground text-sm mb-0.5">Nutritional Information (per 15 g serving)</h3>
+                  <div className="grid grid-cols-2 gap-0.5">
                     {product.nutritionalInfo.map((item, index) => (
-                      <div key={index} className="flex justify-between text-sm">
+                      <div key={index} className="flex justify-between text-xs">
                         <span className="text-muted-foreground">{item.name}</span>
                         <span className="text-foreground font-medium">{item.value}</span>
                       </div>
@@ -214,12 +214,12 @@ const ProductDetail = () => {
               )}
 
               {/* Indications / Benefits */}
-              <div className="bg-muted/50 rounded-xl p-3">
-                <h3 className="font-semibold text-foreground mb-1">Indications / Benefits</h3>
-                <ul className="space-y-0.5">
+              <div className="bg-muted/50 rounded-lg p-2.5">
+                <h3 className="font-semibold text-foreground text-sm mb-0.5">Indications / Benefits</h3>
+                <ul className="space-y-0">
                   {product.indications.map((item, index) => (
-                    <li key={index} className="text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <li key={index} className="text-muted-foreground text-sm flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-primary" />
                       {item}
                     </li>
                   ))}
@@ -227,19 +227,19 @@ const ProductDetail = () => {
               </div>
 
               {/* Directions for Use */}
-              <div className="bg-muted/50 rounded-xl p-3">
-                <h3 className="font-semibold text-foreground mb-0.5">Directions for Use</h3>
-                <p className="text-muted-foreground">{product.directions}</p>
+              <div className="bg-muted/50 rounded-lg p-2.5">
+                <h3 className="font-semibold text-foreground text-sm">Directions for Use</h3>
+                <p className="text-muted-foreground text-sm">{product.directions}</p>
               </div>
 
               {/* Warnings */}
               {product.warnings && (
-                <div className="bg-destructive/10 rounded-xl p-3">
-                  <h3 className="font-semibold text-destructive mb-1">Warnings</h3>
-                  <ul className="space-y-0.5">
+                <div className="bg-destructive/10 rounded-lg p-2.5">
+                  <h3 className="font-semibold text-destructive text-sm mb-0.5">Warnings</h3>
+                  <ul className="space-y-0">
                     {product.warnings.map((item, index) => (
-                      <li key={index} className="text-muted-foreground flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-destructive" />
+                      <li key={index} className="text-muted-foreground text-sm flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-destructive" />
                         {item}
                       </li>
                     ))}
@@ -249,28 +249,28 @@ const ProductDetail = () => {
 
               {/* Allergen Info */}
               {product.allergenInfo && (
-                <div className="bg-amber-500/10 rounded-xl p-3">
-                  <h3 className="font-semibold text-amber-700 mb-0.5">Allergen Info</h3>
-                  <p className="text-muted-foreground">{product.allergenInfo}</p>
+                <div className="bg-amber-500/10 rounded-lg p-2.5">
+                  <h3 className="font-semibold text-amber-700 text-sm">Allergen Info</h3>
+                  <p className="text-muted-foreground text-sm">{product.allergenInfo}</p>
                 </div>
               )}
 
               {/* Pack Size & Additional Info */}
-              <div className="flex flex-wrap gap-2">
-                <div className="bg-muted/50 rounded-xl p-3 flex-1 min-w-[150px]">
-                  <h3 className="font-semibold text-foreground mb-0.5">Pack Size</h3>
-                  <p className="text-muted-foreground">{product.packSize}</p>
+              <div className="flex flex-wrap gap-1.5">
+                <div className="bg-muted/50 rounded-lg p-2.5 flex-1 min-w-[120px]">
+                  <h3 className="font-semibold text-foreground text-sm">Pack Size</h3>
+                  <p className="text-muted-foreground text-sm">{product.packSize}</p>
                 </div>
                 {product.flavour && (
-                  <div className="bg-muted/50 rounded-xl p-3 flex-1 min-w-[150px]">
-                    <h3 className="font-semibold text-foreground mb-0.5">Flavour</h3>
-                    <p className="text-muted-foreground">{product.flavour}</p>
+                  <div className="bg-muted/50 rounded-lg p-2.5 flex-1 min-w-[120px]">
+                    <h3 className="font-semibold text-foreground text-sm">Flavour</h3>
+                    <p className="text-muted-foreground text-sm">{product.flavour}</p>
                   </div>
                 )}
                 {product.category && (
-                  <div className="bg-muted/50 rounded-xl p-3 flex-1 min-w-[150px]">
-                    <h3 className="font-semibold text-foreground mb-0.5">Category</h3>
-                    <p className="text-muted-foreground">{product.category}</p>
+                  <div className="bg-muted/50 rounded-lg p-2.5 flex-1 min-w-[120px]">
+                    <h3 className="font-semibold text-foreground text-sm">Category</h3>
+                    <p className="text-muted-foreground text-sm">{product.category}</p>
                   </div>
                 )}
               </div>
