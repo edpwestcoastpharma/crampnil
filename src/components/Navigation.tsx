@@ -54,6 +54,9 @@ const Navigation = () => {
                 className="h-9 lg:h-11 w-auto object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
               />
             </div>
+            <span className="hidden sm:inline text-xs lg:text-sm font-medium">
+              Fast Relief from <span className="text-primary">Muscle Pain</span> & <span className="text-secondary">Cramps</span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
