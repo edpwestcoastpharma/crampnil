@@ -45,16 +45,16 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo Section with glow effect */}
-          <div className="flex items-center gap-3 group cursor-pointer">
+          <div className="flex flex-col items-start group cursor-pointer">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <img
                 src={crampnilLogo}
                 alt="CRAMPNIL"
-                className="h-9 lg:h-11 w-auto object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
+                className="h-8 lg:h-10 w-auto object-contain relative z-10 transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <span className="hidden sm:inline text-xs lg:text-sm font-medium">
+            <span className="text-[10px] lg:text-xs font-medium text-muted-foreground mt-0.5">
               Fast Relief from <span className="text-primary">Muscle Pain</span> & <span className="text-secondary">Cramps</span>
             </span>
           </div>
