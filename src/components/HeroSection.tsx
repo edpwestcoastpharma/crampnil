@@ -88,16 +88,16 @@ const HeroSection = () => {
             </p>
             
             {/* Benefits List */}
-            <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <ul className="space-y-2 mb-4 sm:mb-6 animate-fade-in inline-flex flex-col items-start" style={{ animationDelay: "0.3s" }}>
               {benefits.map((benefit, index) => (
                 <li 
                   key={index}
-                  className="flex items-center gap-3 text-muted-foreground justify-center"
+                  className="flex items-center gap-2 text-muted-foreground"
                 >
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <Check className="w-3 h-3 text-primary-foreground" strokeWidth={3} />
                   </div>
-                  <span className="text-sm sm:text-base">{benefit}</span>
+                  <span className="text-sm sm:text-base text-left">{benefit}</span>
                 </li>
               ))}
             </ul>
