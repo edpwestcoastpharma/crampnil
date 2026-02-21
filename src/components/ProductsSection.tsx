@@ -131,7 +131,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="pt-2 pb-6 lg:pt-3 lg:pb-8 bg-background relative overflow-hidden">
+    <section id="products" className="pt-1 pb-4 lg:pt-2 lg:pb-5 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
@@ -156,7 +156,7 @@ const ProductsSection = () => {
           ))}
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-6">
+        <p className="text-center text-xs text-muted-foreground mt-3">
           Click on any product card to view detailed information
         </p>
       </div>

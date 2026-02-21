@@ -42,7 +42,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[55vh] flex items-center pt-24 pb-2 lg:pt-20 lg:pb-2 overflow-hidden"
+      className="relative min-h-[50vh] flex items-center pt-20 pb-1 lg:pt-18 lg:pb-1 overflow-hidden"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-secondary-light" />
