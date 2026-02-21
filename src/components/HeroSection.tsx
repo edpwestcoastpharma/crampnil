@@ -73,7 +73,7 @@ const HeroSection = () => {
               <img 
                 src={crampnilHeroLogo} 
                 alt="CRAMPNIL" 
-                className="h-16 sm:h-20 lg:h-28 xl:h-32 w-auto mx-auto"
+                className="h-12 sm:h-16 lg:h-22 xl:h-26 w-auto mx-auto"
               />
             </div>
             
