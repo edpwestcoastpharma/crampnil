@@ -42,7 +42,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[60vh] flex items-center pt-28 pb-4 lg:pt-24 lg:pb-4 overflow-hidden"
+      className="relative min-h-[55vh] flex items-center pt-24 pb-2 lg:pt-20 lg:pb-2 overflow-hidden"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-background to-secondary-light" />
@@ -88,7 +88,7 @@ const HeroSection = () => {
             </p>
             
             {/* Benefits List */}
-            <ul className="space-y-2 mb-4 sm:mb-6 animate-fade-in inline-flex flex-col items-start" style={{ animationDelay: "0.3s" }}>
+            <ul className="space-y-1.5 mb-3 sm:mb-4 animate-fade-in inline-flex flex-col items-start" style={{ animationDelay: "0.3s" }}>
               {benefits.map((benefit, index) => (
                 <li 
                   key={index}
@@ -109,7 +109,7 @@ const HeroSection = () => {
             >
               <button
                 onClick={() => handleScrollTo("#products")}
-                className="group relative px-5 sm:px-6 py-2.5 sm:py-3 gradient-bg text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden text-sm"
+                className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground font-semibold rounded-full shadow-glow-pink hover:bg-primary/90 hover:shadow-large hover:scale-105 transition-all duration-300 overflow-hidden text-sm"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <span className="relative">Explore Products</span>

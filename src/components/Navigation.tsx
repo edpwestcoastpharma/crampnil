@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import crampnilLogo from "@/assets/crampnil-logo.png";
 
 const navLinks = [
@@ -65,31 +65,13 @@ const Navigation = () => {
               <li key={link.href}>
                 <button
                   onClick={() => handleLinkClick(link.href)}
-                  className={`relative px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 group overflow-hidden ${
+                  className={`relative px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
                     activeLink === link.href
-                      ? "text-primary-foreground"
-                      : "text-foreground/70 hover:text-foreground"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground/70 hover:text-foreground hover:bg-primary/10"
                   }`}
                 >
-                  {/* Active background */}
-                  <span
-                    className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                      activeLink === link.href
-                        ? "bg-gradient-to-r from-primary to-accent opacity-100"
-                        : "bg-primary/0 group-hover:bg-primary/10 opacity-0 group-hover:opacity-100"
-                    }`}
-                  />
-                  {/* Shine effect on hover */}
-                  <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                  </span>
-                  {/* Label */}
-                  <span className="relative z-10 flex items-center gap-1.5">
-                    {link.label}
-                    {activeLink === link.href && (
-                      <Sparkles className="w-3 h-3 animate-pulse" />
-                    )}
-                  </span>
+                  {link.label}
                 </button>
               </li>
             ))}
@@ -127,16 +109,13 @@ const Navigation = () => {
               >
                 <button
                   onClick={() => handleLinkClick(link.href)}
-                  className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-between group ${
+                  className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                     activeLink === link.href
-                      ? "bg-gradient-to-r from-primary to-accent text-primary-foreground"
+                      ? "bg-primary text-primary-foreground"
                       : "text-foreground/70 hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
-                  <span>{link.label}</span>
-                  {activeLink === link.href && (
-                    <Sparkles className="w-4 h-4 animate-pulse" />
-                  )}
+                  {link.label}
                 </button>
               </li>
             ))}
