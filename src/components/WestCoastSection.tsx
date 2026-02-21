@@ -3,7 +3,7 @@ import westcoastLogo from "@/assets/westcoast-logo.png";
 
 const WestCoastSection = () => {
   return (
-    <section id="westcoast" className="py-6 lg:py-8 relative overflow-hidden">
+    <section id="westcoast" className="py-4 lg:py-5 relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-glow to-secondary opacity-95" />
       
