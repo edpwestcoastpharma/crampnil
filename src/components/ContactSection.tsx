@@ -74,13 +74,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-10 lg:py-14 bg-background relative overflow-hidden">
+    <section id="contact" className="py-6 lg:py-8 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-8">
+        <div className="text-center max-w-3xl mx-auto mb-4">
           <span className="inline-block px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium mb-2">
             Get in Touch
           </span>

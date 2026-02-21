@@ -118,7 +118,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             href={product.amazonLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 w-full py-2 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg font-medium text-xs hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center gap-1.5 w-full py-2 bg-primary text-primary-foreground rounded-lg font-medium text-xs hover:bg-primary/90 transition-colors"
           >
             <ShoppingCart className="w-3.5 h-3.5" />
             Buy Now
@@ -131,13 +131,13 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const ProductsSection = () => {
   return (
-    <section id="products" className="pt-4 pb-10 lg:pt-6 lg:pb-14 bg-background relative overflow-hidden">
+    <section id="products" className="pt-2 pb-6 lg:pt-3 lg:pb-8 bg-background relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-8">
+        <div className="text-center max-w-3xl mx-auto mb-4">
           <span className="inline-block px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-medium mb-2">
             Product Range
           </span>
