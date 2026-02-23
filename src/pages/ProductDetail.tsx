@@ -113,43 +113,43 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background flex flex-col">
       <Navigation />
       
-      <main className="pt-20 pb-4 flex-1 flex flex-col justify-center">
-        <div className="container mx-auto px-4">
+      <main className="pt-16 pb-6 flex-1">
+        <div className="mx-auto px-4" style={{ maxWidth: "1200px" }}>
           {/* Back Button */}
           <Link 
             to="/#products" 
-            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors mb-3 text-sm"
+            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors mb-2 text-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Products
           </Link>
 
           {/* Product Content */}
-          <div className="grid lg:grid-cols-2 gap-6 items-start">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-5 items-start">
             {/* Left: Product Image */}
-            <div className="bg-gradient-to-br from-primary-light/50 to-secondary-light/50 rounded-xl p-6 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-primary-light/50 to-secondary-light/50 rounded-xl p-5 flex items-center justify-center">
               <img
                 src={product.image}
                 alt={product.name}
-                className="max-h-64 w-auto object-contain drop-shadow-xl"
+                className="max-h-56 w-auto object-contain drop-shadow-xl"
               />
             </div>
 
             {/* Right: Product Information */}
-            <div className="space-y-1">
-              <h1 className="text-2xl lg:text-3xl font-bold text-foreground mb-1">
+            <div className="space-y-0.5" style={{ lineHeight: "1.4" }}>
+              <h1 className="text-xl lg:text-2xl font-bold text-foreground mb-0.5">
                 {product.name}
               </h1>
 
               {/* Dosage Form */}
-              <div className="bg-muted/50 rounded-lg px-2.5 py-1.5">
+              <div className="bg-muted/50 rounded-lg px-3 py-1.5">
                 <h3 className="font-semibold text-foreground text-xs">Dosage Form</h3>
                 <p className="text-muted-foreground text-xs">{product.dosageForm}</p>
               </div>
 
               {/* Composition */}
               {product.composition && (
-                <div className="bg-muted/50 rounded-lg px-2.5 py-1.5">
+                <div className="bg-muted/50 rounded-lg px-3 py-1.5">
                   <h3 className="font-semibold text-foreground text-xs mb-0.5">Composition</h3>
                   <div className="flex flex-wrap gap-x-3 gap-y-0">
                     {product.composition.map((item, index) => (
@@ -164,7 +164,7 @@ const ProductDetail = () => {
 
               {/* Nutritional Information */}
               {product.nutritionalInfo && (
-                <div className="bg-muted/50 rounded-lg px-2.5 py-1.5">
+                <div className="bg-muted/50 rounded-lg px-3 py-1.5">
                   <h3 className="font-semibold text-foreground text-xs mb-0.5">Nutritional Info (per 15 g)</h3>
                   <div className="grid grid-cols-2 gap-x-3 gap-y-0">
                     {product.nutritionalInfo.map((item, index) => (
@@ -178,7 +178,7 @@ const ProductDetail = () => {
               )}
 
               {/* Indications / Benefits */}
-              <div className="bg-muted/50 rounded-lg px-2.5 py-1.5">
+              <div className="bg-muted/50 rounded-lg px-3 py-1.5">
                 <h3 className="font-semibold text-foreground text-xs mb-0.5">Indications / Benefits</h3>
                 <div className="flex flex-wrap gap-x-3 gap-y-0">
                   {product.indications.map((item, index) => (
@@ -191,7 +191,7 @@ const ProductDetail = () => {
               </div>
 
               {/* Directions for Use */}
-              <div className="bg-muted/50 rounded-lg px-2.5 py-1.5">
+              <div className="bg-muted/50 rounded-lg px-3 py-1.5">
                 <h3 className="font-semibold text-foreground text-xs">Directions for Use</h3>
                 <p className="text-muted-foreground text-xs">{product.directions}</p>
               </div>
@@ -199,7 +199,7 @@ const ProductDetail = () => {
               {/* Warnings & Allergen inline */}
               <div className="flex gap-1.5">
                 {product.warnings && (
-                  <div className="bg-destructive/10 rounded-lg px-2.5 py-1.5 flex-1">
+                  <div className="bg-destructive/10 rounded-lg px-3 py-1.5 flex-1">
                     <h3 className="font-semibold text-destructive text-xs mb-0.5">Warnings</h3>
                     {product.warnings.map((item, index) => (
                       <span key={index} className="text-muted-foreground text-xs flex items-center gap-1">
@@ -210,7 +210,7 @@ const ProductDetail = () => {
                   </div>
                 )}
                 {product.allergenInfo && (
-                  <div className="bg-amber-500/10 rounded-lg px-2.5 py-1.5 flex-1">
+                  <div className="bg-amber-500/10 rounded-lg px-3 py-1.5 flex-1">
                     <h3 className="font-semibold text-amber-700 text-xs">Allergen Info</h3>
                     <p className="text-muted-foreground text-xs">{product.allergenInfo}</p>
                   </div>
@@ -219,18 +219,18 @@ const ProductDetail = () => {
 
               {/* Pack Size & Additional Info */}
               <div className="flex flex-wrap gap-1.5">
-                <div className="bg-muted/50 rounded-lg px-2.5 py-1.5 flex-1 min-w-[100px]">
+                <div className="bg-muted/50 rounded-lg px-3 py-1.5 flex-1 min-w-[100px]">
                   <h3 className="font-semibold text-foreground text-xs">Pack Size</h3>
                   <p className="text-muted-foreground text-xs">{product.packSize}</p>
                 </div>
                 {product.flavour && (
-                  <div className="bg-muted/50 rounded-lg px-2.5 py-1.5 flex-1 min-w-[100px]">
+                  <div className="bg-muted/50 rounded-lg px-3 py-1.5 flex-1 min-w-[100px]">
                     <h3 className="font-semibold text-foreground text-xs">Flavour</h3>
                     <p className="text-muted-foreground text-xs">{product.flavour}</p>
                   </div>
                 )}
                 {product.category && (
-                  <div className="bg-muted/50 rounded-lg px-2.5 py-1.5 flex-1 min-w-[100px]">
+                  <div className="bg-muted/50 rounded-lg px-3 py-1.5 flex-1 min-w-[100px]">
                     <h3 className="font-semibold text-foreground text-xs">Category</h3>
                     <p className="text-muted-foreground text-xs">{product.category}</p>
                   </div>
@@ -242,9 +242,9 @@ const ProductDetail = () => {
                 href={product.amazonLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block mt-1"
+                className="block pt-1"
               >
-                <Button className="w-full py-4 text-sm font-semibold bg-primary hover:bg-primary/90 transition-opacity">
+                <Button className="w-full py-3 text-sm font-semibold bg-primary hover:bg-primary/90 transition-opacity">
                   Buy Now on Amazon
                 </Button>
               </a>
