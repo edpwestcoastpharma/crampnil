@@ -118,7 +118,7 @@ const ProductDetail = () => {
           {/* Back Button */}
           <Link 
             to="/#products" 
-            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors mb-2 text-sm"
+            className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors mt-5 mb-2 text-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             Back to Products
